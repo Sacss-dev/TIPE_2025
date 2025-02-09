@@ -8,5 +8,5 @@ Voilà un index pour traverser ce git sereinement :
 - [La documentation initiale](/documentation/docu.md)
 - Les brouillons
 - Le code
-- Les expériences
+- [Les expériences](/experiences/xp.md)
 - La présentation finale
