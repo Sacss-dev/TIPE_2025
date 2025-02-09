@@ -10,3 +10,14 @@ Voilà un index pour traverser ce git sereinement :
 - Le code
 - [Les expériences](/experiences/xp.md)
 - La présentation finale
+
+--- 
+Par *Olivier Caffier*, élève en MPI* au lycée Faidherbe à Lille
+
+Sous licence [*CC BY-ND*](https://creativecommons.org/licenses/by-nd/4.0/) 
+
+
+
+<div align="center"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Cc_by-nd_icon.svg/1200px-Cc_by-nd_icon.svg.png" alt="CC BY ND" width="200"/> </div>
+<div align="center">  CC BY-ND </div>
+<br />
