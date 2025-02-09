@@ -34,5 +34,13 @@ On peut d'ailleurs faire autre chose qu'une contraction vers le centre, pour vé
 <div align="center">  XP I.1.C : Deux nuages possédant la même accumulation mais pas la même densité, contraction vers le bord droit  (f=0.4)</div>
 <br />
 <div align="center"> <img src="/experiences/img/contract_f_0_6.png" alt="Contraction bord droit" width="400"/> </div>
-<div align="center">  XP I.1.D : Deux nuages possédant la même accumulation mais pas la même densité, contraction vers le bord droit  (f=0.6)</div>
+<div align="center">  XP I.1.D : Deux nuages possédant la même accumulation mais pas la même densité, contraction vers le bord droit   (f=0.6)</div>
 <br />
+
+
+### Expérience I.2 - Modéliser un nuage en mouvement
+
+Techniquement, on pourrait dire qu'il s'agit juste de déplacer chaque point d'une coordonnée $`X_{\text{init}} = (x_1,y_1)`$ vers une coordonnée $`X_{\text{final}} = (x_2,y_2)`$. On considèrera donc que les transitions se feront entre deux états du même nuage avec le même nombre de points. 
+
+Dans un premier temps, on réalisera des trajectoires rectilignes car on fonctionne avec une distance euclidienne (on visualise bien le chemin le plus court entre deux points de $`\mathbb{R}^2`$ comme le segment les reliant. Ainsi, on prendra comme _fonction de coût_ (cf. brouillons et présentation pour + d'explications) la distance euclidienne mélée à la direction vers l'arrivée (le gradient indiquera ainsi bien la direction où la distance sera minimale et dirigera vers l'arrivée) : 
+
