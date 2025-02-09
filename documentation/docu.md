@@ -7,3 +7,8 @@ J'ai ensuite poursuivi mes recherches sur le problème de transport optimal en m
  - [Optimal Transport for Image Processing](https://hal.science/tel-01246096/file/hdr_hal2.pdf), Nicolas Papadakis
  - [Monge Kantorovich and transport theory](https://math.uchicago.edu/~may/REU2023/REUPapers/Yao,Colin.pdf), Colin Yao
  - [Optimal Transport & Image processing](https://helios2.mi.parisdescartes.fr/~jdelon/enseignement/cours_image_m2/COURS_M2_color-transfer.pdf), Julie Delon
+
+
+Enfin, nous pouvons également repartir à la racine du problème avec les travaux des pères fondateurs de cette théorie du transport : 
+ - [Mémoire sur la théorie des déblais et des remblais](https://www.google.com/url?q=https://gallica.bnf.fr/ark:/12148/bpt6k35800/f797.item&sa=D&source=docs&ust=1739114162668615&usg=AOvVaw2sDJF1xCzeUrV_hg7f2OjF), Gaspard Monge
+ - [Kantorovich, le planificateur révolutionnaire](https://www.lemonde.fr/sciences/article/2012/09/20/kantorovitch-le-planificateur-revolutionnaire_1763261_1650684.html), Cédric Villani
