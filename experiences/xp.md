@@ -38,7 +38,11 @@ On peut d'ailleurs faire autre chose qu'une contraction vers le centre, pour vé
 <br />
 
 
-### Expérience I.2 - Modéliser un nuage en mouvement
+## II. Nuage en mouvement : Principe de la _gradient descent_
+L'algorithme de descente du gradient est le suivant : à une fonction de coût $`c`$ non nulle, on associe à $`f`$ son inverse ($`f=1/c`$). Dès lors, comme le gradient de $`f`$ nous dirige vers là où $`f`$ serait maximale (du moins localement), il nous indique (par inverse) là où $`c`$ serait minimale, d'où le coût minimisé.
+
+Le principe est donc de suivre localement là où le gradient de $`f`$ nous oriente afin de réaliser un coût total minimal.
+## II.A - Déplacement optimal du nuage à l'aide du gradient 
 
 Techniquement, on pourrait dire qu'il s'agit juste de déplacer chaque point d'une coordonnée $`X_{\text{init}} = (x_1,y_1)`$ vers une coordonnée $`X_{\text{final}} = (x_2,y_2)`$. On considèrera donc que les transitions se feront entre deux états du même nuage avec le même nombre de points. 
 
