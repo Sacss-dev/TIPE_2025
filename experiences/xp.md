@@ -63,6 +63,8 @@ Ainsi, on prendra comme _fonction de coût_ (cf. brouillons et présentation pou
 
 
 <br />
+
+
 📝 Pour pallier ce problème, **on pourrait imaginer un barycentre**, qui donnerait une direction principale pour le corps, et ensuite que les points suivent + ou - cette direction en fonction de leur gradient. Mais dans les cas extrêmes, cela ne changerait rien (le nuage finirait quand même par se diviser), il faut donc imaginer une sorte de limite dans les écarts entre les points pour éviter la situation visible en _XP II.1.C_ : 
 
 <div align="center"> <img src="/experiences/img/ecart_points.png" alt="Points très écartés" width="400"/> </div>
@@ -70,4 +72,8 @@ Ainsi, on prendra comme _fonction de coût_ (cf. brouillons et présentation pou
 
 
 <br />
+
+
+  * **Proposition 1** : il faudrait moyenner l'écart entre les points, de sorte que l'on puisse détecter et donc éviter que deux points consécutifs sont très écartés par rapport à l'écart moyen.
+  * **Proposition 2** : On veut quand même éviter que la forme du nuage ne se contracte/dilate pas trop. On va alors partir d'une densité initiale $`d_0`$ et d'un écart de densité autorisé $`\varepsilon_d`$, et s'assurer que tout au long de la transition, la densité du nuage $`d`$ appartienne à l'intervalle $`[d_0 - \varepsilon_d , d_0 + \varepsilon_d]`$
 
