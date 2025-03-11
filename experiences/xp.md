@@ -142,7 +142,12 @@ def calculer_deplacement(A, B, carte, pas=1.0):
 
 Dans toutes nos expériences précédentes, **le gradient optimise localement le déplacement du nuage**. On fait alors face à un problème classique en algorithmique gloutonne : faire les meilleurs choix localement n'implique pas de faire le meilleur choix globalement.
 
-Illustrons cela avec un exemple : Prenons une carte assez simple avec différentes zones, et marquons les points de départ et d'arrivée.
+Illustrons cela avec un exemple : Prenons une carte assez simple et schématisons à partir de cette dernière (+ la zone de couleur est foncée, + le coût de parcours y est élevée). 
 
+<div align="center"> <img src="/experiences/img/pb_glouton.jpeg" alt="Problème fondamental de l'algorithme glouton" width="400"/> </div>
+<div align="center">  XP II.B : Le problème fondamental d'un algorithme glouton </div>
+
+
+<br />
 
 
