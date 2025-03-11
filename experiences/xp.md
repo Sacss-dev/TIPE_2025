@@ -74,6 +74,67 @@ Ainsi, on prendra comme _fonction de coût_ (cf. brouillons et présentation pou
 <br />
 
 
-  * **Proposition 1** : il faudrait moyenner l'écart entre les points, de sorte que l'on puisse détecter et donc éviter que deux points consécutifs sont très écartés par rapport à l'écart moyen.
-  * **Proposition 2** : On veut quand même éviter que la forme du nuage ne se contracte/dilate pas trop. On va alors partir d'une densité initiale $`d_0`$ et d'un écart de densité autorisé $`\varepsilon_d`$, et s'assurer que tout au long de la transition, la densité du nuage $`d`$ appartienne à l'intervalle $`[d_0 - \varepsilon_d , d_0 + \varepsilon_d]`$
+  * **Proposition 1** : il faudrait moyenner l'écart entre les points, de sorte que l'on puisse détecter et donc éviter que deux points consécutifs sont très écartés par rapport à l'écart moyen. On construit alors la fonction `regulariser_positions(points, facteur_seuil=1.5)`
+```python
+# Moyenner les écarts
+def regulariser_positions(points, facteur_seuil=1.5):
+    """
+    Ajuste les positions des points pour éviter qu'ils ne se dispersent trop.
+    """
+    nouveaux_points = points.copy()
+    nb_points = len(nouveaux_points)
+
+    # Calcul des distances entre tous les points voisins (y compris premier <-> dernier)
+    distances = [np.linalg.norm(nouveaux_points[i] - nouveaux_points[i-1]) for i in range(nb_points)]
+    distance_moyenne = np.mean(distances)
+
+    for i in range(nb_points):
+        j = (i + 1) % nb_points  # Voisin suivant (avec boucle)
+        d = np.linalg.norm(nouveaux_points[j] - nouveaux_points[i])
+        
+        if d > facteur_seuil * distance_moyenne:  # Trop éloigné
+            correction = (nouveaux_points[i] + nouveaux_points[j]) / 2  # Moyenne entre les deux
+            nouveaux_points[j] = correction  # Ajustement
+    
+    return np.array(nouveaux_points)
+```
+
+Ajoutons à cela la modification de notre fonction `calculer_deplacement(A, B, carte, pas=1.0)` : 
+```python
+# Déplacement glouton en minimisant le coût total
+def calculer_deplacement(A, B, carte, pas=1.0):
+    nouveaux_A = []
+    for (xA, yA), (xB, yB) in zip(A, B):
+        direction = np.array([xB - xA, yB - yA])
+        direction /= np.linalg.norm(direction) + 1e-8  # Normalisation
+        
+        # Prendre en compte le gradient de la carte des coûts
+        gradient = calculer_gradient((xA, yA), carte)
+        direction -= 0.5 * gradient  # Équilibre entre distance et coût
+        direction /= np.linalg.norm(direction) + 1e-8
+        
+        nouveaux_A.append((xA + pas * direction[0], yA + pas * direction[1]))
+    
+    # 🛠️ Appliquer la régularisation pour éviter la séparation du groupe
+    return regulariser_positions(np.array(nouveaux_A))
+```
+
+
+  On arrive alors à la situation suivante : 
+  <div align="center"> <img src="/experiences/img/transport_nuage_non_divisible.gif" alt="Nuage qui ne se divise plus" width="400"/> </div>
+<div align="center">  XP II.1.C : le nuage ne se divise plus en deux </div>
+
+
+<br />
+
+
+
+
+
+
+  * **Proposition 2** : On veut quand même éviter que la forme du nuage ne se contracte/dilate pas trop. On va alors partir d'une densité initiale $`d_0`$ et d'un écart de densité autorisé $`\varepsilon_d`$, et s'assurer que tout au long de la transition, la densité du nuage $`d`$ appartienne à l'intervalle $`[d_0 - \varepsilon_d , d_0 + \varepsilon_d]`$.
+     On reprend alors nos calculs d'aire de la méthode de Monte Carlo de la partie I, et on s'assure que notre transition respecte cet écart par rapport à la densité initiale.
+
+
+
 
