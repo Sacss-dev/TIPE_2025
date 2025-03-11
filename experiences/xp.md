@@ -136,5 +136,13 @@ def calculer_deplacement(A, B, carte, pas=1.0):
      On reprend alors nos calculs d'aire de la méthode de Monte Carlo de la partie I, et on s'assure que notre transition respecte cet écart par rapport à la densité initiale.
 
 
+=> Rajouter un GIF pour le respect de la densité 
+
+## II.B - Limites de l'algorithme glouton : optimisation locale et non globale
+
+Dans toutes nos expériences précédentes, **le gradient optimise localement le déplacement du nuage**. On fait alors face à un problème classique en algorithmique gloutonne : faire les meilleurs choix localement n'implique pas de faire le meilleur choix globalement.
+
+Illustrons cela avec un exemple : Prenons une carte assez simple avec différentes zones, et marquons les points de départ et d'arrivée.
+
 
 
