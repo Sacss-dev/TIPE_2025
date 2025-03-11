@@ -144,7 +144,7 @@ Dans toutes nos expériences précédentes, **le gradient optimise localement le
 
 Illustrons cela avec un exemple : Prenons une carte assez simple et schématisons à partir de cette dernière (+ la zone de couleur est foncée, + le coût de parcours y est élevée). 
 
-<div align="center"> <img src="/experiences/img/pb_glouton.jpeg" alt="Problème fondamental de l'algorithme glouton" width="400"/> </div>
+<div align="center"> <img src="/experiences/img/pb_glouton.jpeg" alt="Problème fondamental de l'algorithme glouton" width="700"/> </div>
 <div align="center">  XP II.B : Le problème fondamental d'un algorithme glouton </div>
 
 
