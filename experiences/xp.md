@@ -39,7 +39,7 @@ On peut d'ailleurs faire autre chose qu'une contraction vers le centre, pour vé
 
 
 ## II. Nuage en mouvement : Principe de la _gradient descent_
-L'algorithme de descente du gradient est le suivant : à une fonction de coût $`c`$ non nulle, on associe à $`f`$ son inverse ($`f=1/c`$). Dès lors, comme le gradient de $`f`$ nous dirige vers là où $`f`$ serait maximale (du moins localement), il nous indique (par inverse) là où $`c`$ serait minimale, d'où le coût minimisé.
+L'algorithme de descente du gradient est le suivant : à une fonction de coût $`c`$ non nulle, on associe à $`f`$ son opposé ($`f=-c`$). Dès lors, comme le gradient de $`f`$ nous dirige vers là où $`f`$ serait maximale (du moins localement), il nous indique (par opposé) là où $`c`$ serait minimale, d'où le coût minimisé.
 
 Le principe est donc de suivre localement là où le gradient de $`f`$ nous oriente afin de réaliser un coût total minimal.
 ## II.A - Déplacement optimal du nuage à l'aide du gradient : phase 1 (point par point)
@@ -122,7 +122,7 @@ def calculer_deplacement(A, B, carte, pas=1.0):
 
   On arrive alors à la situation suivante : 
   <div align="center"> <img src="/experiences/img/transport_nuage_non_divisible.gif" alt="Nuage qui ne se divise plus" width="400"/> </div>
-<div align="center">  XP II.1.C : le nuage ne se divise plus en deux </div>
+<div align="center">  XP II.1.D : le nuage ne se divise plus en deux </div>
 
 
 <br />
@@ -137,7 +137,7 @@ def calculer_deplacement(A, B, carte, pas=1.0):
      La version corrigée donne alors :
 
      <div align="center"> <img src="/experiences/img/transport_densite_controlee.gif" alt="Nuage qui reste dense" width="400"/> </div>
-<div align="center">  XP II.1.D : le nuage conserve une certaine densité </div>
+<div align="center">  XP II.1.E : le nuage conserve une certaine densité </div>
 
 
 <br />
@@ -174,5 +174,5 @@ Si l'on se référère maintenant au calcul de densité de la partie I., puis qu
 <div align="center">  XP II.1.D : le nuage conserve une certaine densité </div>
 
 
-
+et on retrouve bien les animations disponibles lors des bulletins météos : plus le nuage se contracte, plus il tend vers le rouge (vers le bleu dans le cas inverse) !
 
