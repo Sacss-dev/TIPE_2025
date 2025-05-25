@@ -6,8 +6,7 @@ Vous trouverez ici toutes les ressources liées à mon projet, de la documentati
 
 Voilà un index pour traverser ce git sereinement : 
 - [La documentation initiale](/documentation/docu.md)
-- Les brouillons
-- Le code
+- [Le code](/documentation/code.md)
 - [Les expériences](/experiences/xp.md)
 - [La présentation finale](/presentation/presentation.md)
 
