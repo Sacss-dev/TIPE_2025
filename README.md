@@ -9,7 +9,7 @@ Voilà un index pour traverser ce git sereinement :
 - Les brouillons
 - Le code
 - [Les expériences](/experiences/xp.md)
-- La présentation finale
+- [La présentation finale](/presentation/presentation.md)
 
 --- 
 Par *Olivier Caffier*, élève en MPI* au lycée Faidherbe à Lille
