@@ -134,11 +134,21 @@ def calculer_deplacement(A, B, carte, pas=1.0):
 
   * **Proposition 2** : On veut quand même éviter que la forme du nuage ne se contracte/dilate pas trop. On va alors partir d'une densité initiale $`d_0`$ et d'un écart de densité autorisé $`\varepsilon_d`$, et s'assurer que tout au long de la transition, la densité du nuage $`d`$ appartienne à l'intervalle $`[d_0 - \varepsilon_d , d_0 + \varepsilon_d]`$.
      On reprend alors nos calculs d'aire de la méthode de Monte Carlo de la partie I, et on s'assure que notre transition respecte cet écart par rapport à la densité initiale.
+     La version corrigée donne alors :
+
+     <div align="center"> <img src="/experiences/img/transport_densite_controlee.gif" alt="Nuage qui reste dense" width="400"/> </div>
+<div align="center">  XP II.1.D : le nuage conserve une certaine densité </div>
 
 
-=> Rajouter un GIF pour le respect de la densité 
+<br />
 
-## II.B - Limites de l'algorithme glouton : optimisation locale et non globale
+
+
+
+
+
+
+### II.B - Limites de l'algorithme glouton : optimisation locale et non globale
 
 Dans toutes nos expériences précédentes, **le gradient optimise localement le déplacement du nuage**. On fait alors face à un problème classique en algorithmique gloutonne : faire les meilleurs choix localement n'implique pas de faire le meilleur choix globalement.
 
@@ -149,5 +159,20 @@ Illustrons cela avec un exemple : Prenons une carte assez simple et schématison
 
 
 <br />
+
+Si l'on essaie de modéliser cette situation : 
+
+<div align="center"> <img src="/experiences/img/transport_nuage_avec_cout.gif" alt="Nuage qui suit une stratégie gloutonne" width="400"/> </div>
+<div align="center">  XP II.B.1 : le nuage suit le chemin à droite car optimal localement, et non le chemin de gauche optimal globalement </div>
+
+
+## III. Regroupement des résultats
+
+Si l'on se référère maintenant au calcul de densité de la partie I., puis qu'on utilise cela avec le parcours réalisé en XP II.B.1, cela donne : 
+
+<div align="center"> <img src="/experiences/img/nuage_meteo.gif" alt="Nuage qui reste dense" width="400"/> </div>
+<div align="center">  XP II.1.D : le nuage conserve une certaine densité </div>
+
+
 
 
